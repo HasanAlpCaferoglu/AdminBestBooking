@@ -47,12 +47,12 @@ if (process.env.NODE_ENV === "production") {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
 
-  app.use(express.static(path.join(__dirname, "../client/build"))); // set static folder which is the build folder for react belongs to clientside
+  //app.use(express.static(path.join(__dirname, "../client/build"))); // set static folder which is the build folder for react belongs to clientside
   app.use(express.static(path.join(__dirname, "../admin/build"))); // set static folder which is the build folder for react belongs to admin side
 
   app.get("*", (req, res) =>
     res.sendFile(
-      path.resolve(__dirname, "../", "client", "build", "index.html")
+      path.resolve(__dirname, "../", "admin", "build", "index.html")
     )
   ); // load index.html is in our static build folder
 } else {
